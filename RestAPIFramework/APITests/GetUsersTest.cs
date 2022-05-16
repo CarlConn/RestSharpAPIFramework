@@ -39,6 +39,13 @@ namespace RestAPIFramework.APITests
             };
             
             //string payLoad = JsonConvert.SerializeObject(body, Formatting.Indented);
+
+            var restClient = new RestClient("https://reqres.in/api/");
+            var restRequest = new RestRequest("users", Method.Post);
+            restRequest.AddJsonBody(body);
+            RestResponse<CreateUserResponse> restResponse = restClient.Execute<CreateUserResponse>(restRequest);
+            restResponse.IsSuccessful
+            
             
             var action = new Actions.Actions();
             var response = action.CreateNewUser(body);
