@@ -28,5 +28,17 @@ namespace RestAPIFramework.APITests
             var  x = JsonConvert.DeserializeObject<Users>(content);
             Assert.AreEqual(2, x.page);
         }
+
+        [TestMethod]
+        public void CreateNewUserTest()
+        {
+            string payLoad = "{" +
+                                "\"name": "morpheus,\"" +
+                                "\"job": "leader\""+
+                                "}";
+            var action = new Actions.Actions();
+            var response = action.CreateNewUser(payLoad);
+            Assert.AreEqual("morpheus", response.name);
+        }
 }
 }

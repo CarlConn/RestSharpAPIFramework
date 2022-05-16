@@ -3,5 +3,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::37C14F54-5309-444A-B446-609F46CD92DE::net5.0::RestAPIFramework.APITests.GetUsersTest.GetUsers&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::37C14F54-5309-444A-B446-609F46CD92DE::net5.0::RestAPIFramework.APITests.GetUsersTest.GetUsers1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::37C14F54-5309-444A-B446-609F46CD92DE::net5.0::RestAPIFramework.APITests.GetUsersTest.CreateNewUserTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

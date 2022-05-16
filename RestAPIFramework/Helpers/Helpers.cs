@@ -11,7 +11,7 @@ namespace RestAPIFramework.Helpers
         private RestRequest _request;
         private readonly string baseURL = "https://reqres.in/";
 
-        public RestClient SetUrl(string endPoint)
+        public RestClient SetUrl()
         {
             //var uri = Path.Combine(baseURL, endPoint);
             _client = new RestClient(baseURL);
@@ -22,6 +22,14 @@ namespace RestAPIFramework.Helpers
         {
             _request = new RestRequest(endPoint, Method.Get);
             _request.AddHeader("Accept", "application/json");
+            return _request;
+        }
+
+        public RestRequest CreatePostRequest(string endPoint, string payLoad)
+        {
+            _request = new RestRequest(endPoint, Method.Post);
+            _request.AddHeader("Accept", "application/json");
+            _request.AddParameter("Application/Json", payLoad, ParameterType.RequestBody);
             return _request;
         }
 
