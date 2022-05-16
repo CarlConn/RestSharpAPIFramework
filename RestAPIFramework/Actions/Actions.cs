@@ -25,12 +25,12 @@ namespace RestAPIFramework.Actions
             return users;
         }
 
-        public CreateUserList CreateNewUser(string payLoad)
+        public CreateUserResponse CreateNewUser(CreateUserRequest payLoad)
         {
             var client = _helpers.SetUrl();
             var request = _helpers.CreatePostRequest("api/users", payLoad);
             var response = _helpers.GetResponse(client, request);
-            var createUser = _helpers.GetContent<CreateUserList>(response);
+            var createUser = _helpers.GetContent<CreateUserResponse>(response);
             return createUser;
         }
     }

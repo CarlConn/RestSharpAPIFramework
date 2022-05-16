@@ -32,12 +32,16 @@ namespace RestAPIFramework.APITests
         [TestMethod]
         public void CreateNewUserTest()
         {
-            string payLoad = "{" +
-                                "\"name": "morpheus,\"" +
-                                "\"job": "leader\""+
-                                "}";
+            var body = new CreateUserRequest()
+            {
+                name = "morpheus",
+                job = "leader"
+            };
+            
+            //string payLoad = JsonConvert.SerializeObject(body, Formatting.Indented);
+            
             var action = new Actions.Actions();
-            var response = action.CreateNewUser(payLoad);
+            var response = action.CreateNewUser(body);
             Assert.AreEqual("morpheus", response.name);
         }
 }
