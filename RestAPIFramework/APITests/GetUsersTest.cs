@@ -34,11 +34,11 @@ namespace RestAPIFramework.APITests
         {
             string payLoad = "{" +
                                 "\"name": "morpheus,\"" +
-                                "\"job": "leader\""+
+                                "\"job": "leader""+
                                 "}";
             var action = new Actions.Actions();
             var response = action.CreateNewUser(payLoad);
             Assert.AreEqual("morpheus", response.name);
-        }
+        }git
 }
 }
