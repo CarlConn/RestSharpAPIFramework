@@ -25,11 +25,12 @@ namespace RestAPIFramework.Helpers
             return _request;
         }
 
-        public RestRequest CreatePostRequest(string endPoint, string payLoad)
+        public RestRequest CreatePostRequest(string endPoint, CreateUserRequest payLoad)
         {
             _request = new RestRequest(endPoint, Method.Post);
+            _request.AddJsonBody(payLoad);
             _request.AddHeader("Accept", "application/json");
-            _request.AddParameter("Application/Json", payLoad, ParameterType.RequestBody);
+            //_request.AddParameter("Application/Json", payLoad, ParameterType.RequestBody);
             return _request;
         }
 
