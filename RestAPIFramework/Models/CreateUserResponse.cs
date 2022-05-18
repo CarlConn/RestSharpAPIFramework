@@ -2,7 +2,7 @@
 
 namespace RestAPIFramework.Models
 {
-    public class CreateUserList
+    public class CreateUserResponse
     {
         public string name { get; set; }
         public string job { get; set; }
