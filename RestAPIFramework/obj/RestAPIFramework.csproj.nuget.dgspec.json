@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\caco1743.CLUB_260_WA_SEA\\RiderProjects\\RestSharpAPIFramework\\RestAPIFramework\\RestAPIFramework.csproj": {}
+    "C:\\Users\\Admin\\RiderProjects\\RestAPIFramework\\RestAPIFramework\\RestAPIFramework.csproj": {}
   },
   "projects": {
-    "C:\\Users\\caco1743.CLUB_260_WA_SEA\\RiderProjects\\RestSharpAPIFramework\\RestAPIFramework\\RestAPIFramework.csproj": {
+    "C:\\Users\\Admin\\RiderProjects\\RestAPIFramework\\RestAPIFramework\\RestAPIFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\caco1743.CLUB_260_WA_SEA\\RiderProjects\\RestSharpAPIFramework\\RestAPIFramework\\RestAPIFramework.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\RiderProjects\\RestAPIFramework\\RestAPIFramework\\RestAPIFramework.csproj",
         "projectName": "RestAPIFramework",
-        "projectPath": "C:\\Users\\caco1743.CLUB_260_WA_SEA\\RiderProjects\\RestSharpAPIFramework\\RestAPIFramework\\RestAPIFramework.csproj",
-        "packagesPath": "C:\\Users\\caco1743.CLUB_260_WA_SEA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\caco1743.CLUB_260_WA_SEA\\RiderProjects\\RestSharpAPIFramework\\RestAPIFramework\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\RiderProjects\\RestAPIFramework\\RestAPIFramework\\RestAPIFramework.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\RiderProjects\\RestAPIFramework\\RestAPIFramework\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\caco1743.CLUB_260_WA_SEA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

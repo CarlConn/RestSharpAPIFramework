@@ -1,6 +1,6 @@
 ﻿namespace RestAPIFramework.Models
 {
-    public class CreateUserRequest
+    public class CreateUserListRequest
     {
         public string name { get; set; }
         public string job { get; set; }

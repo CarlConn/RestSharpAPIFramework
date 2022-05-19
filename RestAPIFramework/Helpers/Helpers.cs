@@ -25,7 +25,7 @@ namespace RestAPIFramework.Helpers
             return _request;
         }
 
-        public RestRequest CreatePostRequest(string endPoint, CreateUserRequest payLoad)
+        public RestRequest CreatePostRequest(string endPoint, CreateUserListRequest payLoad)
         {
             _request = new RestRequest(endPoint, Method.Post);
             _request.AddJsonBody(payLoad);
