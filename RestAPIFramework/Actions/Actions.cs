@@ -6,7 +6,7 @@ namespace RestAPIFramework.Actions
 {
     public class Actions
     {
-        private string endPoint = "api/users?page=2";
+        //private string endPoint = "api/users?page=2";
         private readonly Helpers.Helpers _helpers; 
 
         public Actions()
@@ -14,12 +14,11 @@ namespace RestAPIFramework.Actions
             _helpers = new Helpers.Helpers();
         }
 
-        public Users GetUsers()
+        public Users GetUsers(string endPoint)
         {
             var helper = new Helpers.Helpers();
             var client = helper.SetUrl();
             var request = helper.CreateGetRequest(endPoint);
-            request.RequestFormat = DataFormat.Json;
             var response = helper.GetResponse(client, request);
             var users = helper.GetContent<Users>(response);
             return users;

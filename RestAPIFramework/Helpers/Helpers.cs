@@ -22,6 +22,7 @@ namespace RestAPIFramework.Helpers
         {
             _request = new RestRequest(endPoint, Method.Get);
             _request.AddHeader("Accept", "application/json");
+            _request.RequestFormat = DataFormat.Json;
             return _request;
         }
 

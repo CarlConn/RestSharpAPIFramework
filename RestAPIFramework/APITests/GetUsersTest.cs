@@ -13,8 +13,10 @@ namespace RestAPIFramework.APITests
         [TestMethod]
         public void GetUsers()
         {
+            string endPoint = "api/users?page=2";
+            
             var action = new Actions.Actions();
-            var restResponse = action.GetUsers();
+            var restResponse = action.GetUsers(endPoint);
             Assert.AreEqual(2, restResponse.page);
         }
         
