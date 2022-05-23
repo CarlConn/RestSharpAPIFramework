@@ -31,7 +31,14 @@ namespace RestAPIFramework.Helpers
             _request = new RestRequest(endPoint, Method.Post);
             _request.AddJsonBody(payLoad);
             _request.AddHeader("Accept", "application/json");
-            //_request.AddParameter("Application/Json", payLoad, ParameterType.RequestBody);
+            return _request;
+        }
+        
+        public RestRequest CreatePutRequest(string endPoint, CreateUserListRequest payLoad)
+        {
+            _request = new RestRequest(endPoint, Method.Put);
+            _request.AddJsonBody(payLoad);
+            _request.AddHeader("Accept", "application/json");
             return _request;
         }
 

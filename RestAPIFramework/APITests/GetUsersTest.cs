@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Net;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestPlatform.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
@@ -10,16 +11,36 @@ namespace RestAPIFramework.APITests
     [TestClass]
     public class GetUsersTest
     {
+        private string _endPoint;
+        private HttpStatusCode _statusCode;
+        
         [TestMethod]
         public void GetUsers()
         {
-            string endPoint = "api/users?page=2";
-            
+            _endPoint = "api/users?page=2";
             var action = new Actions.Actions();
-            var restResponse = action.GetUsers(endPoint);
-            Assert.AreEqual(2, restResponse.page);
+            var restResponse = action.GetUsers(_endPoint);
+            restResponse.page.Should().Be(2);
         }
-        
+
+        [TestMethod]
+        public void GetSingleUserTest()
+        {
+            _endPoint = "api/users=1";
+            var action = new Actions.Actions();
+            var restResponse = action.GetUsers(_endPoint);
+            restResponse.data[0].id.Should().Be(1);
+            restResponse.data[0].email.Should().BeNull();
+        }
+
+        [TestMethod]
+        public void GetSingleUserNotFoundTest()
+        {
+            _endPoint = "api/users/23";
+            var action = new Actions.Actions();
+            var restResponse = action.GetUsers(_endPoint);
+        }
+
         [TestMethod]
         public  void GetUsers1()
         {
@@ -28,7 +49,7 @@ namespace RestAPIFramework.APITests
             request.AddHeader("Accept", "application/json");
             RestResponse response = client.Execute(request);
             var content = response.Content;
-            var  x = JsonConvert.DeserializeObject<Users>(content);
+            var  x = JsonConvert.DeserializeObject<GetListUsers>(content);
             Assert.AreEqual(2, x.page);
         }
 
@@ -41,19 +62,23 @@ namespace RestAPIFramework.APITests
                 job = "leader"
             };
             
-            //string payLoad = JsonConvert.SerializeObject(body, Formatting.Indented);
-
-            // var restClient = new RestClient("https://reqres.in/api/");
-            // var restRequest = new RestRequest("users", Method.Post);
-            // restRequest.AddJsonBody(body);
-            // RestResponse<CreateUserListResponse> restResponse = restClient.Execute<CreateUserListResponse>(restRequest);
-            //
-            
+            var action = new Actions.Actions();
+            var response = action.CreateNewUser(body);
+            response.name.Should().Be("morpheus");
+        }
+        
+        [TestMethod]
+        public void UpdateUserTest()
+        {
+            var body = new CreateUserListRequest()
+            {
+                name = "morpheus",
+                job = "zion resident"
+            };
             
             var action = new Actions.Actions();
             var response = action.CreateNewUser(body);
-            //Assert.AreEqual("morpheus", response.name);
-            response.name.Should().Be("morpheus");
+            response.job.Should().Be("zion resident");
         }
 }
 }

@@ -1,6 +1,6 @@
 ﻿namespace RestAPIFramework.Models
 {
-    public class UserData
+    public class GetListUserData
     {
         public int id { get; set; }
         public string email { get; set; }

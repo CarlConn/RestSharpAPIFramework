@@ -14,13 +14,13 @@ namespace RestAPIFramework.Actions
             _helpers = new Helpers.Helpers();
         }
 
-        public Users GetUsers(string endPoint)
+        public GetListUsers GetUsers(string endPoint)
         {
             var helper = new Helpers.Helpers();
             var client = helper.SetUrl();
             var request = helper.CreateGetRequest(endPoint);
             var response = helper.GetResponse(client, request);
-            var users = helper.GetContent<Users>(response);
+            var users = helper.GetContent<GetListUsers>(response);
             return users;
         }
 
@@ -28,6 +28,15 @@ namespace RestAPIFramework.Actions
         {
             var client = _helpers.SetUrl();
             var request = _helpers.CreatePostRequest("api/users", payLoad);
+            var response = _helpers.GetResponse(client, request);
+            var createUser = _helpers.GetContent<CreateUserListResponse>(response);
+            return createUser;
+        }
+        
+        public CreateUserListResponse UpdateUser(CreateUserListRequest payLoad)
+        {
+            var client = _helpers.SetUrl();
+            var request = _helpers.CreatePutRequest("api/users", payLoad);
             var response = _helpers.GetResponse(client, request);
             var createUser = _helpers.GetContent<CreateUserListResponse>(response);
             return createUser;
